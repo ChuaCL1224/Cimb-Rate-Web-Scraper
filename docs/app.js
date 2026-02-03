@@ -366,9 +366,12 @@ const showToast = (message) => {
     }, 5000);
 };
 
+const BASE_PATH = "/Cimb-Rate-Web-Scraper";
+
 const loadData = async () => {
     try {
-        const response = await fetch("../data/rates.json", { cache: "no-store" });
+        // const response = await fetch("../data/rates.json", { cache: "no-store" });
+        const response = await fetch(`${BASE_PATH}/data/rates.json`, { cache: "no-store" });
         if (!response.ok) {
             throw new Error("Failed to fetch rates.json");
         }
