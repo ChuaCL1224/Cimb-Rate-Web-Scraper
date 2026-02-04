@@ -366,12 +366,12 @@ const showToast = (message) => {
     }, 5000);
 };
 
-const BASE_PATH = "/Cimb-Rate-Web-Scraper";
+// const BASE_PATH = "/Cimb-Rate-Web-Scraper"; # 没有domain name 才用这个 part 1
 
 const loadData = async () => {
     try {
-        // const response = await fetch("../data/rates.json", { cache: "no-store" });
-        const response = await fetch(`${BASE_PATH}/data/rates.json`, { cache: "no-store" });
+        const response = await fetch("/data/rates.json", { cache: "no-store" });
+        // const response = await fetch(`${BASE_PATH}/data/rates.json`, { cache: "no-store" }); # 没有domain name 才用这个 part 2
         if (!response.ok) {
             throw new Error("Failed to fetch rates.json");
         }
