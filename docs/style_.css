@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --bg-1: #f4f1e6;
     --bg-2: #e2f0ea;
     --ink: #1d2b2a;
@@ -399,16 +399,4 @@ tr:last-child td {
         flex-direction: column;
         align-items: stretch;
     }
-}
-/* Best rate highlight */
-.rate-best {
-    color: var(--accent-dark);
-    font-weight: 600;
-}
-
-.stat-best {
-    background: rgba(224, 122, 95, 0.12);
-    border-color: rgba(224, 122, 95, 0.3);
-    color: var(--accent-dark);
-    font-weight: 600;
 }

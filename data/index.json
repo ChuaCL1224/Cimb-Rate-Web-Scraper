@@ -1,0 +1,11 @@
+{
+  "base_currency": "MYR",
+  "currency": "SGD",
+  "years": {
+    "2026": [
+      "02",
+      "03",
+      "04"
+    ]
+  }
+}
