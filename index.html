@@ -116,6 +116,9 @@
 
         <footer class="site-footer">
             <p>© <span id="current-year"></span> CL Info Studio. All rights reserved.</p>
+            <nav class="footer-links">
+                <a href="/privacy.html">Privacy Policy</a>
+            </nav>
         </footer>
     </div>
 
@@ -126,6 +129,43 @@
             data files.
         </p>
     </div>
+
+    <!-- Cookie Consent Banner -->
+    <div class="cookie-banner" id="cookie-banner" hidden>
+        <div class="cookie-inner">
+            <p class="cookie-text">
+                We use cookies for analytics (Google Analytics) and advertising (Google Ads) to improve
+                your experience and support this site. By clicking "Accept", you consent to our use of cookies.
+            </p>
+            <div class="cookie-actions">
+                <a href="/privacy.html" class="cookie-link">Learn more</a>
+                <button class="cookie-btn cookie-btn--decline" id="cookie-decline">Decline</button>
+                <button class="cookie-btn cookie-btn--accept" id="cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie consent logic
+        (function () {
+            var banner = document.getElementById("cookie-banner");
+            var consent = localStorage.getItem("cookie_consent");
+            if (!consent) {
+                banner.removeAttribute("hidden");
+            } else if (consent === "declined") {
+                window["ga-disable-G-6C2G2HN74C"] = true;
+            }
+            document.getElementById("cookie-accept").addEventListener("click", function () {
+                localStorage.setItem("cookie_consent", "accepted");
+                banner.setAttribute("hidden", "");
+            });
+            document.getElementById("cookie-decline").addEventListener("click", function () {
+                localStorage.setItem("cookie_consent", "declined");
+                banner.setAttribute("hidden", "");
+                window["ga-disable-G-6C2G2HN74C"] = true;
+            });
+        })();
+    </script>
 </body>
 
 </html>
